@@ -55,10 +55,6 @@
     "keywords": ["food", "hungry", "what to eat"],
     "responses": ["Pizza is always a good idea!", "How about some noodles?", "Try something healthy!"]
   },
-  "hobby": {
-    "keywords": ["your hobby", "what do you do for fun"],
-    "responses": ["I like chatting with you!", "Solving puzzles and processing data."]
-  },
   "location": {
     "keywords": ["where are you", "your location"],
     "responses": ["I'm in the cloud!", "Everywhere and nowhere at once."]
@@ -77,5 +73,169 @@
   },
   "default": {
     "responses": ["Sorry, I didn't understand that.", "Can you say that again?", "I'm not sure what you mean."]
+  },
+  "math": {
+    "keywords": ["math", "calculate", "add", "subtract"],
+    "responses": ["I love numbers!", "Math is fun!", "What would you like me to calculate?"]
+  },
+  "python": {
+    "keywords": ["python", "code", "programming"],
+    "responses": ["Python is my favorite!", "I can help you with Python code.", "Let's do some programming!"]
+  },
+  "news": {
+    "keywords": ["news", "headlines", "latest news"],
+    "responses": ["Check a news site for the latest!", "The world is always buzzing with news.", "Want tech news?"]
+  },
+  "sports": {
+    "keywords": ["sports", "football", "cricket"],
+    "responses": ["I like cricket too!", "Big match today?", "Let's play ball!"]
+  },
+  "quote": {
+    "keywords": ["quote", "inspire", "motivation"],
+    "responses": ["Believe in yourself!", "Keep pushing forward.", "You can do it!"]
+  },
+  "book": {
+    "keywords": ["book", "read", "novel"],
+    "responses": ["Reading is powerful.", "What's your favorite book?", "Books open up new worlds."]
+  },
+  "game": {
+    "keywords": ["game", "play", "fun"],
+    "responses": ["Wanna play a game?", "Games are fun!", "Let's have fun!"]
+  },
+  "study": {
+    "keywords": ["study", "learn", "education"],
+    "responses": ["Learning never stops!", "Let’s study together!", "Knowledge is power."]
+  },
+  "holiday": {
+    "keywords": ["holiday", "vacation", "leave"],
+    "responses": ["Time for a break?", "Enjoy your holiday!", "Rest and recharge!"]
+  },
+  "birthday": {
+    "keywords": ["birthday", "happy birthday"],
+    "responses": ["Happy Birthday!", "Wishing you a wonderful year ahead!", "Celebrate big!"]
+  },
+  "festival": {
+    "keywords": ["festival", "celebrate", "diwali", "holi", "eid", "christmas"],
+    "responses": ["Happy Festival!", "May your celebrations be joyful!", "Enjoy the festive vibes!"]
+  },
+  "dream": {
+    "keywords": ["dream", "goal", "ambition"],
+    "responses": ["Follow your dreams!", "Dream big!", "Keep striving."]
+  },
+  "travel": {
+    "keywords": ["travel", "trip", "tour"],
+    "responses": ["Where to next?", "Travel broadens the mind!", "Bon voyage!"]
+  },
+  "work": {
+    "keywords": ["work", "job", "career"],
+    "responses": ["Work hard, rest well!", "What do you do?", "Let's talk goals."]
+  },
+  "school": {
+    "keywords": ["school", "college", "class"],
+    "responses": ["Stay focused in class!", "Learning is your superpower!", "School days are fun."]
+  },
+  "exam": {
+    "keywords": ["exam", "test", "assessment"],
+    "responses": ["Good luck on your exam!", "You’ve got this!", "Stay calm and revise."]
+  },
+  "health": {
+    "keywords": ["health", "fit", "exercise"],
+    "responses": ["Stay healthy!", "Take care of your body.", "Exercise is key."]
+  },
+  "medicine": {
+    "keywords": ["medicine", "doctor", "ill"],
+    "responses": ["Hope you feel better soon!", "Consult a doctor if needed.", "Take your meds!"]
+  },
+  "emotion": {
+    "keywords": ["sad", "happy", "angry", "depressed"],
+    "responses": ["I'm here for you.", "Tell me more.", "Want to talk about it?"]
+  },
+  "pet": {
+    "keywords": ["pet", "dog", "cat"],
+    "responses": ["I love animals too!", "Dogs are loyal friends.", "Cats are mysterious and fun."]
+  },
+  "robot": {
+    "keywords": ["robot", "ai", "artificial"],
+    "responses": ["I'm a kind of robot!", "AI is evolving fast!", "Let’s talk about tech."]
+  },
+  "technology": {
+    "keywords": ["technology", "tech", "gadgets"],
+    "responses": ["Tech is changing the world.", "Let’s explore innovations!", "Do you like gadgets?"]
+  },
+  "music_genre": {
+    "keywords": ["pop", "rock", "rap", "jazz"],
+    "responses": ["Nice taste in music!", "Let's vibe!", "Great genre!"]
+  },
+  "favorite": {
+    "keywords": ["favorite", "like most", "best"],
+    "responses": ["Hard to choose just one!", "Let me think...", "Everything has its charm."]
+  },
+  "history": {
+    "keywords": ["history", "past", "ancient"],
+    "responses": ["History is fascinating.", "Want to learn something historical?", "Let’s dive into the past."]
+  },
+  "science": {
+    "keywords": ["science", "experiment", "physics"],
+    "responses": ["Science is awesome!", "Let’s explore the universe!", "I love experiments."]
+  },
+  "space": {
+    "keywords": ["space", "moon", "mars", "universe"],
+    "responses": ["Space is vast and mysterious!", "Ever seen the stars up close?", "The universe is beautiful."]
+  },
+  "future": {
+    "keywords": ["future", "tomorrow", "next year"],
+    "responses": ["The future is bright!", "Let’s plan ahead.", "What are your goals?"]
+  },
+  "past": {
+    "keywords": ["past", "memory", "yesterday"],
+    "responses": ["Memories are precious.", "What do you remember?", "Yesterday is history."]
+  },
+  "funny": {
+    "keywords": ["funny", "laugh", "lol"],
+    "responses": ["Haha!", "Glad you’re laughing!", "You’re fun to chat with!"]
+  },
+  "bored": {
+    "keywords": ["bored", "nothing to do"],
+    "responses": ["Let’s do something fun!", "Want to play a game?", "Let’s chat more!"]
+  },
+  "motivation": {
+    "keywords": ["motivation", "encourage", "boost"],
+    "responses": ["Keep going!", "You’re stronger than you think!", "Don’t give up!"]
+  },
+  "error": {
+    "keywords": ["error", "bug", "issue"],
+    "responses": ["Let’s debug it!", "Describe the error.", "Try checking your syntax."]
+  },
+  "hobby": {
+    "keywords": ["hobby", "pastime", "interest"],
+    "responses": ["What’s your hobby?", "Hobbies keep life interesting!", "Let’s share hobbies!"]
+  },
+  "ai": {
+    "keywords": ["ai", "artificial intelligence"],
+    "responses": ["I’m powered by AI!", "AI is amazing!", "Let’s talk about intelligent machines."]
+  },
+  "sleepy": {
+    "keywords": ["sleepy", "yawning", "drowsy"],
+    "responses": ["Get some rest!", "Nap time?", "Good night!"]
+  },
+  "party": {
+    "keywords": ["party", "celebration", "dance"],
+    "responses": ["Let’s celebrate!", "Party time!", "Where’s the cake?"]
+  },
+  "family": {
+    "keywords": ["family", "mom", "dad", "brother", "sister"],
+    "responses": ["Family is everything!", "Say hi to your family from me!", "Nice to hear about them."]
+  },
+  "relationship": {
+    "keywords": ["love", "crush", "relationship"],
+    "responses": ["Love is in the air!", "Relationships are deep.", "Tell me more if you like."]
+  },
+  "yes": {
+    "keywords": ["yes", "yeah", "yup"],
+    "responses": ["Great!", "Awesome!", "Let's go!"]
+  },
+  "no": {
+    "keywords": ["no", "nope", "nah"],
+    "responses": ["That’s okay!", "No worries.", "Maybe next time."]
   }
 }
