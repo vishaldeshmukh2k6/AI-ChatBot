@@ -1,0 +1,50 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# Flask specific
+instance/
+*.db
+*.sqlite3
+
+# MacOS system files
+.DS_Store
+
+# VSCode settings (optional)
+.vscode/
+
+# PyCharm settings (optional)
+.idea/
+
+# Logs
+*.log
+
+# Environment files (if using dotenv)
+.env
+.env.*
+
+# Byte-compiled / optimized / DLL files
+*.pyc
+*.pyd
+*.pdb
+*.so
+
+# Unit test / coverage
+htmlcov/
+.tox/
+.coverage
+coverage.xml
+.cache
+nosetests.xml
+pytest_cache/
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
