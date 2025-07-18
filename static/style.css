@@ -1,0 +1,245 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header, footer {
+    background-color: #2d3748;
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+main {
+    padding: 2rem 1rem;
+    max-width: 900px;
+    margin: auto;
+}
+
+h1, h2 {
+    color: #2d3748;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #357ab8;
+    transform: scale(1.02);
+}
+
+.chat-container, .github-result {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 0 12px rgba(0,0,0,0.06);
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.github-result p {
+    margin: 6px 0;
+    font-size: 15px;
+}
+
+.github-result img {
+    max-width: 120px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.chat-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #2d3748;
+}
+
+.chat-box {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.chat-history {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 1.5rem;
+    padding-right: 10px;
+}
+
+.chat-message {
+    padding: 12px 18px;
+    border-radius: 20px;
+    margin: 10px 0;
+    max-width: 80%;
+    line-height: 1.5;
+    font-size: 15px;
+    position: relative;
+    animation: fadeIn 0.4s ease-in-out;
+    word-wrap: break-word;
+}
+
+.user-msg {
+    background-color: #d1f5ff;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.bot-msg {
+    background-color: #f1f1f1;
+    align-self: flex-start;
+    margin-right: auto;
+}
+
+.chat-form {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.chat-form input[type="text"] {
+    flex: 1;
+    padding: 12px 18px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 15px;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.chat-form button {
+    padding: 10px 20px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.chat-form button:hover {
+    background-color: #357ab8;
+    transform: scale(1.03);
+}
+
+.reset-link {
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+    color: #4a90e2;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.reset-link:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    header, footer {
+        font-size: 20px;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    h1, h2 {
+        font-size: 26px;
+        text-align: center;
+    }
+
+    .chat-box {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .chat-message {
+        font-size: 18px;
+        padding: 14px 20px;
+        border-radius: 14px;
+        margin: 10px 0;
+    }
+
+    .chat-form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 1rem;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        font-size: 18px;
+        padding: 16px;
+        border-radius: 12px;
+        border: 2px solid #ccc;
+    }
+
+    button {
+        font-size: 18px;
+        padding: 16px;
+        border-radius: 12px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+    }
+
+    .reset-link {
+        font-size: 18px;
+        margin-top: 1rem;
+        display: block;
+        text-align: center;
+    }
+
+    .github-result {
+        font-size: 18px;
+        padding: 1rem;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
