@@ -5,14 +5,14 @@
 {% block content %}
 <h2 class="chat-title">AI ChatBot</h2>
 
-<div class="chat-box">
+<div class="chat-container">
     <div class="chat-history" id="chatHistory">
         {% for message in chat %}
-        <div class="chat-message user-msg">
-            <span><strong>You:</strong> {{ message.user }}</span>
+        <div class="user-message">
+            <p><strong>You:</strong> {{ message.user }}</p>
         </div>
-        <div class="chat-message bot-msg">
-            <span><strong>Bot:</strong> {{ message.bot }}</span>
+        <div class="bot-message">
+            <p><strong>Bot:</strong> {{ message.bot }}</p>
         </div>
         {% endfor %}
     </div>
