@@ -1,27 +1,29 @@
 from flask import Flask, render_template, request, session, redirect, url_for
-from responses import get_response
-import requests
+from responses import get_bot_response
+from datetime import timedelta
 
 app = Flask(__name__)
-app.secret_key = "chatbot_secret"
+app.secret_key = 'your_secret_key'
+app.permanent_session_lifetime = timedelta(days=7)
 
-# Chatbot route
-@app.route("/", methods=["GET", "POST"])
+@app.route('/', methods=['GET', 'POST'])
 def chatbot():
-    if "chat_history" not in session:
-        session["chat_history"] = []
-    if request.method == "POST":
-        user_input = request.form["user_input"]
-        bot_response = get_response(user_input)
-        session["chat_history"].append({"user": user_input, "bot": bot_response})
-    return render_template("chatbot.html", chat=session["chat_history"])
+    if 'chat' not in session:
+        session['chat'] = []
 
-# Reset chat
-@app.route("/reset")
-def reset_chat():
-    session["chat_history"] = []
-    return redirect(url_for("chatbot"))  # Redirect to chatbot page
+    if request.method == 'POST':
+        user_input = request.form['user_input']
+        bot_reply = get_bot_response(user_input)
 
+        session['chat'].append({'user': user_input, 'bot': bot_reply})
+        session.modified = True
 
-if __name__ == "__main__":
-    app.run(debug=True, port=5001)
+    return render_template('chatbot.html', chat=session['chat'])
+
+@app.route('/reset')
+def reset():
+    session.pop('chat', None)
+    return redirect(url_for('chatbot'))
+
+if __name__ == '__main__':
+    app.run(debug=True, port="5001")

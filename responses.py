@@ -1,16 +1,15 @@
-import random
 import json
 
-# Load responses from JSON file
-with open('responses.json', 'r') as file:
-    responses = json.load(file)
+def load_responses():
+    with open('responses.json', 'r') as file:
+        return json.load(file)
 
-def get_response(user_input):
+data = load_responses()
+
+def get_bot_response(user_input):
     user_input = user_input.lower()
-    for intent, data in responses.items():
-        if intent == "default":
-            continue
-        for keyword in data["keywords"]:
+    for category in data:
+        for keyword in data[category]["keywords"]:
             if keyword in user_input:
-                return random.choice(data["responses"])
-    return random.choice(responses["default"]["responses"])
+                return data[category]["responses"][0]
+    return data["default"]["responses"][0]
