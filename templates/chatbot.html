@@ -1,18 +1,17 @@
 {% extends 'base.html' %}
-
-{% block title %}ChatBot{% endblock %}
+{% block title %}AI ChatBot{% endblock %}
 
 {% block content %}
-<h2 class="chat-title">AI ChatBot</h2>
+<h1 class="chat-title">🤖 AI ChatBot</h1>
 
 <div class="chat-container">
     <div class="chat-history" id="chatHistory">
         {% for message in chat %}
         <div class="user-message">
-            <p><strong>You:</strong> {{ message.user }}</p>
+            <p><img src="{{ url_for('static', filename='user.png') }}" width="24" class="user-icon"> <strong>You:</strong> {{ message.user }}</p>
         </div>
         <div class="bot-message">
-            <p><strong>Bot:</strong> {{ message.bot }}</p>
+            <p><img src="{{ url_for('static', filename='bot.png') }}" width="24" class="bot-icon"> <strong>Bot:</strong> {{ message.bot }}</p>
         </div>
         {% endfor %}
     </div>
@@ -24,4 +23,17 @@
 
     <a href="/reset" class="reset-link">Reset Chat</a>
 </div>
+
+<script>
+    const chatHistory = document.getElementById('chatHistory');
+    chatHistory.scrollTop = chatHistory.scrollHeight;
+
+    const input = document.querySelector('input[name="user_input"]');
+    input.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            this.form.submit();
+        }
+    });
+</script>
 {% endblock %}
