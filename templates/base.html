@@ -1,13 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>{% block title %}AI Chatbot{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 </head>
 <body>
-    <main>
-        {% block content %}{% endblock %}
-    </main>
+    <div class="layout-wrapper">
+        <header class="glass header">
+            <!-- Hamburger Toggle Button -->
+            <button class="nav-toggle" onclick="toggleNav()">
+                <span class="hamburger"></span>
+            </button>
+
+            <!-- Navbar with ID -->
+            <nav class="header-nav" id="navbar">
+                <a href="{{ url_for('home') }}" class="nav-link">Home</a>
+                <a href="{{ url_for('chatbot') }}" class="nav-link">AI ChatBot</a>
+                <a href="{{ url_for('github_finder') }}" class="nav-link">GitHub Profile Finder</a>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer class="glass footer">
+            <p>&copy; 2025 YourBot | All rights reserved.</p>
+        </footer>
+
+        <!-- JavaScript Toggle -->
+        <script>
+            function toggleNav() {
+                const navbar = document.getElementById('navbar');
+                const toggleBtn = document.querySelector('.nav-toggle');
+                navbar.classList.toggle('active');
+                toggleBtn.classList.toggle('active');
+            }
+        </script>
+    </div>
 </body>
 </html>
