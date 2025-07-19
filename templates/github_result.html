@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+{% block title %}GitHub Result{% endblock %}
+
+{% block content %}
+<style>
+    .container {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        color: #fff;
+        text-align: center;
+    }
+
+    .container h1 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        color: #00ffcc;
+    }
+
+    .container img {
+        border-radius: 50%;
+        margin: 1rem 0;
+    }
+
+    .container p {
+        margin: 0.5rem 0;
+        font-size: 1rem;
+    }
+
+    .container a {
+        color: #00ffff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .container ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .container li {
+        background-color: rgba(0, 0, 0, 0.3);
+        margin: 0.5rem 0;
+        padding: 0.7rem;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .container li img {
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .container {
+            padding: 1rem;
+        }
+
+        .container h1 {
+            font-size: 1.5rem;
+        }
+
+        .container p {
+            font-size: 0.95rem;
+        }
+
+        .container li {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .container li a {
+            margin-top: 0.5rem;
+        }
+    }
+</style>
+
+<div class="container">
+    <h1>GitHub Info for {{ user.login }}</h1>
+
+    {% if choice == "account" %}
+        <img src="{{ user.avatar_url }}" width="100" alt="Profile Picture" />
+        <p><strong>Name:</strong> {{ user.name or "N/A" }}</p>
+        <p><strong>Bio:</strong> {{ user.bio or "N/A" }}</p>
+        <p><strong>Location:</strong> {{ user.location or "N/A" }}</p>
+        <p><strong>Public Repos:</strong> {{ user.public_repos }}</p>
+        <p><strong>Followers:</strong> {{ user.followers }}</p>
+        <p><strong>Following:</strong> {{ user.following }}</p>
+        <p><a href="{{ user.html_url }}" target="_blank">View on GitHub</a></p>
+
+    {% elif choice == "repos" %}
+        <h2>Repositories</h2>
+        <ul>
+            {% for repo in repos %}
+                <li><a href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a> - ★ {{ repo.stargazers_count }}</li>
+            {% endfor %}
+        </ul>
+
+    {% elif choice == "followers" %}
+        <h2>Followers</h2>
+        <ul>
+            {% for person in followers %}
+                <li>
+                    <img src="{{ person.avatar_url }}" width="30" alt="{{ person.login }}" />
+                    <a href="{{ person.html_url }}" target="_blank">{{ person.login }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+    {% elif choice == "following" %}
+        <h2>Following</h2>
+        <ul>
+            {% for person in following %}
+                <li>
+                    <img src="{{ person.avatar_url }}" width="30" alt="{{ person.login }}" />
+                    <a href="{{ person.html_url }}" target="_blank">{{ person.login }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</div>
+{% endblock %}
+%}

@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block title %}GitHub Profile Finder{% endblock %}
+
+{% block content %}
+<style>
+    .container {
+        max-width: 600px;
+        margin: 40px auto;
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        text-align: center;
+    }
+
+    .container h1 {
+        font-size: 2rem;
+        color: #ffffff;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+
+    .github-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .github-form input,
+    .github-form select {
+        padding: 12px;
+        border-radius: 10px;
+        border: none;
+        background: rgba(255, 255, 255, 0.2);
+        color: #fff;
+        font-size: 1rem;
+        outline: none;
+    }
+
+    .github-form input::placeholder {
+        color: #ddd;
+    }
+
+    .github-form select option {
+        color: #000;
+    }
+
+    .github-form button {
+        padding: 12px;
+        border: none;
+        border-radius: 10px;
+        background: #6a5acd;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .github-form button:hover {
+        background: #7b68ee;
+    }
+
+    @media screen and (max-width: 480px) {
+        .container {
+            padding: 20px;
+            margin: 20px 10px;
+        }
+
+        .github-form input,
+        .github-form select,
+        .github-form button {
+            font-size: 0.95rem;
+        }
+    }
+</style>
+
+<div class="container">
+    <h1>GitHub Profile Finder</h1>
+    <form method="POST" class="github-form">
+        <input type="text" name="username" placeholder="Enter GitHub Username" required />
+        <select name="choice" required>
+            <option value="" disabled selected>Select Info</option>
+            <option value="1">Account Details</option>
+            <option value="2">Repositories</option>
+            <option value="3">Followers</option>
+            <option value="4">Following</option>
+        </select>
+        <button type="submit">Search</button>
+    </form>
+</div>
+{% endblock %}
